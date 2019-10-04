@@ -1,0 +1,39 @@
+@import "font.scss";
+@import "reset.scss";
+@import "commonStyle.scss";
+@import "mixin.scss";
+@import "progress.scss";
+@import "lobby.scss";
+@import "rightPanel.scss";
+@import "gameBet.scss";
+@import "route.scss";
+@import "animation.scss";
+@import "chart.scss";
+@import "controller.scss";
+@import "popup.scss";
+
+html,
+body {
+    font-family: "Microsoft JhengHei", Helvetica, sans-serif;
+    height: 100%;
+    touch-action: manipulation;
+
+    /* disable iOS double touch zoom in */
+    *:active {
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+}
+
+body {
+    @include lg {
+        padding: 50% 0;
+    }
+
+
+    @include iPhoneX {
+        background-color: #000;
+    }
+
+    background-color: #000;
+    touch-action: manipulation;
+}

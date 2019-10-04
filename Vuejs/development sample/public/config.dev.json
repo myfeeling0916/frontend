@@ -1,0 +1,10 @@
+{
+    "version": "0.1",
+    "game_host": "travis-demo-ws-dev.xxxxx.com",
+    "api_host": "travis-demove-api-dev.xxxxx.com",
+    "api_id": "4",
+    "authorization": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "redirect_url": "https://pf-portal.xxxxxxxxxxxxxx.com",
+    "secure": true,
+    "debug": true
+}

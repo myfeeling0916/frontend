@@ -1,0 +1,29 @@
+{
+  "name": "template",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+  },
+  "dependencies": {
+    "gsap": "^2.0.2",
+    "howler": "^2.0.15",
+    "js-base64": "^2.4.9",
+    "moment": "^2.22.2",
+    "vue": "^2.5.17",
+    "vue-image-preloader": "^0.2.8",
+    "vue-router": "^3.0.1",
+    "vue-sessionstorage": "^1.0.0",
+    "vue-visibility-change": "^1.1.0",
+    "vue2-filters": "^0.3.0",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.0.4",
+    "@vue/cli-service": "^3.0.4",
+    "node-sass": "^4.9.0",
+    "sass-loader": "^7.0.1",
+    "vue-template-compiler": "^2.5.17"
+  }
+}
