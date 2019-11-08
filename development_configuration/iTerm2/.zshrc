@@ -1,3 +1,5 @@
+# https://medium.com/statementdog-engineering/prettify-your-zsh-command-line-prompt-3ca2acc967f
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
