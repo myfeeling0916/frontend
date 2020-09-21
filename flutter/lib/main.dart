@@ -1,5 +1,4 @@
 import 'dart:html';
-import 'dart:js';
 
 import 'package:flutter/material.dart';
 
@@ -39,7 +38,9 @@ class _MyAppState extends State<MyApp> {
             // Navigator.pushNamed(context, '/page2');
             Navigator.of(context).push(MaterialPageRoute(builder: (context) {
               return Page2(textData: 'abcd');
-            }));
+            })).then((value) {
+              print(value);
+            });
           },
         ),
       ),
@@ -54,15 +55,21 @@ class Page2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Scaffold(
-          appBar: AppBar(
-            title: Text('page2'),
+        appBar: AppBar(
+          title: Text('page2'),
+        ),
+        body: SizedBox.expand(
+          child: Container(
+            color: Colors.green,
+            child: Text(textData),
           ),
-          body: SizedBox.expand(
-            child: Container(
-              color: Colors.green,
-              child: Text(textData),
-            ),
-          )),
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            Navigator.pop(context, 'page result data.');
+          },
+        ),
+      ),
     );
   }
 }
