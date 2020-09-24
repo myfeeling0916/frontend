@@ -1,4 +1,9 @@
+import 'package:json_annotation/json_annotation.dart';
+
+part 'post.g.dart';
+
 // define data model.
+@JsonSerializable()
 class Post {
   int userId;
   int id;
@@ -6,11 +11,6 @@ class Post {
   String body;
 
   Post(this.userId, this.id, this.title, this.body);
-
-  Post.fromMap(Map<String, dynamic> map) {
-    userId = map['userId'] ?? 0;
-    id = map['id'] ?? 0;
-    title = map['title'] ?? '';
-    body = map['body'] ?? '';
-  }
+  factory Post.fromJson(Map<String, dynamic> json) => _$PostFromJson(json);
+  Map<String, dynamic> toJson() => _$PostToJson(this);
 }

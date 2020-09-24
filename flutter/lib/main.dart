@@ -1,21 +1,62 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+import 'model/post.dart';
 
 void main() => runApp(MaterialApp(
-      home: new MyApp(),
+      // home: new MyApp(),
+      home: new FutureBuildDemo(),
     ));
 
-class MyApp extends StatefulWidget {
-  MyApp({Key key}) : super(key: key);
+class FutureBuildDemo extends StatefulWidget {
+  FutureBuildDemo({Key key}) : super(key: key);
 
   @override
-  _MyAppState createState() => _MyAppState();
+  _FutureBuildDemoState createState() => _FutureBuildDemoState();
 }
 
-class _MyAppState extends State<MyApp> {
+class _FutureBuildDemoState extends State<FutureBuildDemo> {
+  final String host = "https://jsonplaceholder.typicode.com/posts";
+  List datas = [];
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  getData() {
+    return http.get(host);
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Scaffold(),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Http+FutureBuilder'),
+      ),
+      body: FutureBuilder(
+        future: getData(),
+        builder: (BuildContext context, AsyncSnapshot snapshot) {
+          if (!snapshot.hasData) {
+            return Container();
+          }
+
+          List datas = jsonDecode(snapshot.data.body);
+
+          return ListView.builder(
+            itemCount: datas.length,
+            itemBuilder: (context, idx) {
+              Post data = Post.fromJson(datas[idx]);
+              return Card(
+                  child: Container(
+                child: ListTile(
+                  title: Text(data.title),
+                  subtitle: Text(data.body),
+                ),
+              ));
+            },
+          );
+        },
+      ),
     );
   }
 }

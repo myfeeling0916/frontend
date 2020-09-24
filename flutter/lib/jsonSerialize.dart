@@ -45,7 +45,7 @@ class _FutureBuildDemoState extends State<FutureBuildDemo> {
           return ListView.builder(
             itemCount: datas.length,
             itemBuilder: (context, idx) {
-              Post data = Post.fromMap(datas[idx]);
+              Post data = Post.fromJson(datas[idx]);
               return Card(
                   child: Container(
                 child: ListTile(
