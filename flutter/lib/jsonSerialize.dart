@@ -17,7 +17,6 @@ class FutureBuildDemo extends StatefulWidget {
 
 class _FutureBuildDemoState extends State<FutureBuildDemo> {
   final String host = "https://jsonplaceholder.typicode.com/posts";
-  List datas = [];
   @override
   void initState() {
     super.initState();
