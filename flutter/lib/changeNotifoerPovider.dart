@@ -33,6 +33,7 @@ class MyApp extends StatelessWidget {
 //        child: MyHomePage(title: 'Flutter Demo Home Page'),
 //      ),
       home: ChangeNotifierProvider(
+//        builder: (context) => MyCounter(0),  // has demo code.
         create: (context) => MyCounter(0),
         child: MyHomePage(title: 'Flutter Demo Home Page'),
       ),
